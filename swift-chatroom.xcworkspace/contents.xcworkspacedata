@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SwiftChatoom/SwiftChatoom.xcodeproj">
+      location = "group:Makefile">
    </FileRef>
    <FileRef
-      location = "group:Article.md">
+      location = "group:SwiftChatoom/SwiftChatoom.xcodeproj">
    </FileRef>
    <Group
       location = "container:"

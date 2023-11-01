@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "server",
     platforms: [
-       .macOS(.v13)
+        .macOS(.v13),
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
@@ -23,6 +23,6 @@ let package = Package(
 
             // Workaround for https://github.com/apple/swift-package-manager/issues/6940
             .product(name: "Vapor", package: "vapor"),
-        ])
+        ]),
     ]
 )

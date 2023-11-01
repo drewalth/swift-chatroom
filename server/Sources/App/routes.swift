@@ -2,17 +2,18 @@ import Vapor
 
 var connectedClients: [UUID: WebSocket] = [:]
 
-
 func routes(_ app: Application) throws {
-    app.get { req async in
+    app.get { _ async in
         "It works!"
     }
 
-    app.get("hello") { req async -> Greeting in
+    app.get("hello") { _ async -> Greeting in
         Greeting(message: "Hello world!")
     }
 
-    app.webSocket("chat") { req, ws in
+    app.webSocket("chat") { _, ws in
+        ws.send("Connected!")
+
         // Generate a unique ID for the connected client
         let clientId = UUID()
 
@@ -25,13 +26,12 @@ func routes(_ app: Application) throws {
         }
 
         // Listen for messages from the client
-        ws.onText { ws, text in
+        ws.onText { _, text in
             // Broadcast the message to all connected clients
             for client in connectedClients.values {
                 client.send(text)
             }
         }
-
     }
 }
 
