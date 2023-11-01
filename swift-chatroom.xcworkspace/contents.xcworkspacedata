@@ -5,6 +5,9 @@
       location = "group:Makefile">
    </FileRef>
    <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
       location = "group:SwiftChatoom/SwiftChatoom.xcodeproj">
    </FileRef>
    <Group
